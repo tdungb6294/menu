@@ -1,0 +1,124 @@
+.header {
+    position: sticky;
+    display: flex;
+    height: 48px;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+.info {
+    padding-top: 12px;
+    padding-left: 18px;
+}
+
+.bimap {
+    vertical-align: bottom;
+}
+
+.text {
+    font-size: 15px;
+    position: relative;
+    top: 2px;
+    padding-left: 4px;
+}
+
+.timeContainer {
+    position: absolute;
+    top: 0;
+    padding-top: 12px;;
+    padding-left: 400px;
+}
+
+.bitime {
+    vertical-align: bottom;
+}
+
+.workTime {
+    font-size: 15px;
+    position: relative;
+    top: 2px;
+    padding-left: 4px;
+}
+
+.phone {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 12px;
+    padding-right: 18px;
+}
+
+.biphone {
+    vertical-align: bottom;
+}
+
+.switch {
+    top: 16px;
+    right: 200px;
+    margin-left: 60px;
+    position: absolute;
+    display: inline-block;
+    width: 32px;
+    height: 16px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: solid white 1px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    left: 2px;
+    top: 2px;
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.en {
+    font-size: 15px;
+    position: absolute;
+    top: 15px;
+    right: 174px;
+}
+
+.lt {
+    font-size: 15px;
+    position: absolute;
+    top: 15px;
+    right: 238px;
+}
+
+@media only screen and (max-width: 860px) {
+    .header {
+        display: none;
+    }
+}

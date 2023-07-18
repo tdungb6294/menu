@@ -1,0 +1,46 @@
+.listContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.list {
+    display: inline-flex;
+    gap: 80px;
+}
+
+.text {
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    color: #fff6f6;
+    font-weight: bold;
+}
+
+.text:hover {
+    color: #FFF6C6;
+    cursor: pointer;
+}
+
+.text:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    top: 0;
+    margin-top: 24px;
+    bottom: 0;
+    left: 50%;
+    background-color: #FFF6C6;
+    transition: all 0.2s;
+}
+
+.text:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+@media only screen and (max-width: 860px) {
+    .listContainer {
+        display: none;
+    }
+}
