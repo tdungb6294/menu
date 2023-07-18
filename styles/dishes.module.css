@@ -5,6 +5,25 @@
     border-radius: 30px;
 }
 
+.dishContainer {
+    display: flex;
+    margin: 280px auto;
+    width: 100%;
+    height: auto;
+    gap: 120px;
+    text-align: center;
+}
+
+.dishes {
+    font-size: 16px;
+    color: white;
+    list-style: none;
+}
+
+.dishCard {
+    text-align: center;
+}
+
 .background {
     top: 0;
     left: 0;
@@ -47,5 +66,9 @@
 
     .mainTextContainer {
         margin-top: 0px;
+    }
+
+    .logo {
+        margin-top: 64px;
     }
 }

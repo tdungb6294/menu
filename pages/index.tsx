@@ -1,4 +1,4 @@
-import { SetStateAction, createContext, useEffect, useState } from "react"
+import { createContext, useState } from "react"
 import styles from '../styles/dishes.module.css'
 import Header from "@/components/Header"
 import NavBar from "@/components/NavBar"
@@ -7,12 +7,15 @@ import VietnameseCuisine from "@/components/VietnameseCuisine"
 import PhoneMenu from "@/components/PhoneMenu"
 import MenuButton from "@/components/MenuButton"
 import PhoneNavBar from "@/components/PhoneNavBar"
+import PopularDishes from "@/components/PopularDishes"
 
-type Dish = {
+export type Dish = {
   _id: string,
   name: string,
   en_name: string, 
-  image: string
+  image: string,
+  popular: boolean,
+  price: number
 }
 
 type language = {
@@ -46,14 +49,6 @@ export const PhoneContext = createContext<phone>(defaultPhone)
 export default function Page() {
   const [language, setLanguage] = useState<string>('lt')
   const [phone, setPhone] = useState<boolean>(false)
-  const [checked, setChecked] = useState<boolean>(false)
-
-  const [dishes, setDishes] = useState([])
-  useEffect(() => {
-    fetch('http://localhost:3000/api/dishes')
-    .then(response => response.json())
-    .then(data => setDishes(data))
-  }, [])
   
   return (
     <>
@@ -70,21 +65,7 @@ export default function Page() {
           <LogoPattern/>
           <VietnameseCuisine/>
           <MenuButton/>
-
-          {
-            /*
-            dishes.map((dish: Dish) => (
-              <>
-                <li>
-                  {checkLanguage(language) ? dish.name : dish.en_name}
-                  
-                </li>
-                <img className={styles.dish} src={dish.image}
-                alt='Photo'/>
-              </>
-              
-            ))*/
-          }
+          <PopularDishes/>
         </LanguageContext.Provider>
       </PhoneContext.Provider>
     </>
