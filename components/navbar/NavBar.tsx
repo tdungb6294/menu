@@ -1,41 +1,48 @@
 import { LanguageContext, PhoneContext, checkLanguage } from "@/pages"
 import { useContext } from "react"
-import styles from '../styles/phonenavbar.module.css'
+import styles from './navbar.module.css'
+import Link from "next/link"
 
 type lang = {
     lt: string,
-    en: string
+    en: string,
+    link: string
 }
 
 const data = [
     {
         lt: 'PRADŽIA',
-        en: 'HOME'
+        en: 'HOME',
+        link: '/'
     },
     {
         lt: 'MENIU',
-        en: 'MENU'
+        en: 'MENU',
+        link: '/'
     },
     {
         lt: 'APIE MUS',
-        en: 'ABOUT US'
+        en: 'ABOUT US',
+        link: '/about'
     },
     {
         lt: 'KONTAKTAI',
-        en: 'CONTACTS'
+        en: 'CONTACTS',
+        link: '/contacts'
     }
 ]
 
-function PhoneNavBar() {
+function NavBar() {
     const {language, setLanguage} = useContext(LanguageContext)
+
 
     if(checkLanguage(language)) {
         return (
             <div className={styles.listContainer}>
                 <div className={styles.list}>
                     {
-                        data.map((value : lang) => (
-                            <li className={styles.text}>{value.lt}</li>
+                        data.map((value : lang, index) => (
+                            <Link key={index} className={styles.text} href={value.link}>{value.lt}</Link>
                         ))
                     }
                 </div>
@@ -47,8 +54,8 @@ function PhoneNavBar() {
             <div className={styles.listContainer}>
                 <div className={styles.list}>
                     {
-                        data.map((value : lang) => (
-                            <li className={styles.text}>{value.en}</li>
+                        data.map((value : lang, index) => (
+                            <Link key={index} className={styles.text} href={value.link}>{value.en}</Link>
                         ))
                     }
                 </div>
@@ -58,4 +65,4 @@ function PhoneNavBar() {
     
 }
 
-export default PhoneNavBar
+export default NavBar

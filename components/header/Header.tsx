@@ -1,8 +1,8 @@
 import { useContext, useState } from "react"
-import styles from "../styles/header.module.css"
+import styles from "./header.module.css"
 import { BiMap, BiTime, BiPhone } from 'react-icons/bi'
-import { LanguageContext} from '../pages/index'
-import { checkLanguage } from "../pages/index"
+import { LanguageContext} from '../../pages/index'
+import { checkLanguage } from "../../pages/index"
 
 const data = {
   lt: 'I-VI 9-20 val., VII 9-17 val.',
@@ -16,11 +16,8 @@ const address = {
 
 function Header() {
   const {language, setLanguage} = useContext(LanguageContext)
-  const [lang, setLang] = useState(true)
 
   function handleLanguage() {
-    if(lang === true) setLang(false)
-    else setLang(true)
     if(language === 'lt') setLanguage('en')
     else setLanguage('lt')
   }
@@ -45,7 +42,7 @@ function Header() {
           LT
         </span>
         <label className={styles.switch}>
-          <input type="checkbox" onClick={() => {handleLanguage()}} checked={!checkLanguage(language)}></input>
+          <input id='checkBOX' type="checkbox" onChange={() => {handleLanguage()}} checked={!checkLanguage(language)}></input>
           <span className={styles.slider}></span>
         </label>
         <span className={styles.en}>

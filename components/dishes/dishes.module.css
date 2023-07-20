@@ -1,0 +1,156 @@
+.dish {
+    width: 80%;
+    height: auto;
+}
+
+.dishContainer {
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.dishes {
+    padding-top: 10%;
+    font-weight: bold;
+    font-size: 32px;
+    color: white;
+    list-style: none;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 32px;
+    color: white;
+}
+
+.dishCard {
+    width: 480px;
+    height: 640px;
+    margin: 40px auto 20px;
+    background-color: #1c1c1c;
+    border-radius: 20px;
+    text-align: center;
+    display: block;
+}
+
+.viewMenu {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 32px;
+    color: #FFF6C6;
+}
+
+.popularPage {
+    position: absolute;
+    display: block;
+    top: 0;
+    margin-top: 100vh;
+    height: 6000px;
+    width: 100%;
+    gap: 120px;
+    justify-content: center;
+    background-color: #2E2E2E;
+}
+
+.popularTitle {
+    padding-top: 80px;
+    font-weight: bold;
+    font-size: 64px;
+    color: white;
+    text-align: center;
+}
+
+.background {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: fixed;
+    background-attachment: fixed;
+    background-position: center 50%;
+    background-image: url('/bg.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(55%)
+}
+
+.logoContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.logo {
+    margin: 0 auto;
+    width: 160px;
+    height: 160px;
+}
+
+.mainTextContainer {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.mainText {
+    color: #FFF6C6;
+    font-size: 64px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 1240px) {
+    .dishContainer {
+        display: block;
+    }
+
+    .popularTitle {
+        font-size: 48px;
+    }
+    
+    .mainText {
+        margin-top: 40px;
+        font-size: 48px;
+    }
+
+    .logoContainer {
+        margin-top: 80px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .logoContainer {
+        top: 0;
+        display: block;
+        align-items: center;
+        width: 100%;
+        transform: scale(0.8);
+    }
+
+    .mainText {
+        font-size: 32px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .popularTitle {
+        font-size: 32px;
+    }
+
+    .dish {
+        width: 70%;
+        height: auto;
+    }
+
+    .dishCard {
+        width: 90%;
+        height: auto;
+    }
+
+    .dishes {
+        padding-top: 20px;
+    }
+
+    .viewMenu {
+        height: 80px;
+    }
+}

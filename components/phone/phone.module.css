@@ -2,7 +2,7 @@
     display: none;
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 1024px) {
     .menuContainer {
         top: 0;
         position: fixed;
@@ -37,6 +37,17 @@
         padding-right: 8px;
         height: 48px;
         width: 48px;
+        color: var(--main-text-color);
+        cursor: pointer;
+        right: 0;
+    }
+
+    .imcross {
+        position: absolute;
+        padding-top: 20px;
+        padding-right: 20px;
+        height: 24px;
+        width: 24px;
         color: var(--main-text-color);
         cursor: pointer;
         right: 0;
@@ -113,5 +124,13 @@
     }
 }
 
+@media only screen and (max-width: 300px) {
+    .phone {
+        display: none;
+    }
 
+    .phoneIcon {
+        display: none;
+    }
+}
 

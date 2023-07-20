@@ -1,16 +1,14 @@
 import {BiMenu, BiPhone} from 'react-icons/bi'
-import styles from '../styles/phone.module.css'
+import {ImCross} from 'react-icons/im'
+import styles from './phone.module.css'
 import { useContext, useState } from 'react'
 import { LanguageContext, PhoneContext, checkLanguage } from '@/pages'
 
 function PhoneMenu() {
     const {language, setLanguage} = useContext(LanguageContext)
     const {phone, setPhone} = useContext(PhoneContext)
-    const [lang, setLang] = useState(true)
 
     function handleLanguage() {
-        if(lang === true) setLang(false)
-        else setLang(true)
         if(language === 'lt') setLanguage('en')
         else setLanguage('lt')
     }
@@ -22,13 +20,12 @@ function PhoneMenu() {
 
     return (
         <div className={styles.menuContainer}>
-            <BiMenu className={styles.bimenu} onClick={() => {handleOnClick()}}/>
-            
+            {phone ? <BiMenu className={styles.bimenu} onClick={() => {handleOnClick()}}/> : <ImCross className={styles.imcross} onClick={() => {handleOnClick()}}/>}
             <span className={styles.lt}>
                 LT
             </span>
             <label className={styles.switch}>
-                <input type="checkbox" onClick={() => {handleLanguage()}} checked={!checkLanguage(language)}></input>
+                <input id='checkBOXPhone' type="checkbox" onChange={() => {handleLanguage()}} checked={!checkLanguage(language)}></input>
                 <span className={styles.slider}></span>
             </label>
             <span className={styles.en}>
@@ -41,7 +38,6 @@ function PhoneMenu() {
                     +370 647 26198
                 </span>
             </div>
-            
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import clientPromise from "../../lib/mongodb";
 
 export default async (req : Request, res : Response) => {
+    /*
    try {
        const client = await clientPromise;
        const db = client.db("cuisine");
@@ -13,5 +14,5 @@ export default async (req : Request, res : Response) => {
        res.json(dishes);
    } catch (e) {
        console.error(e);
-   }
+   }*/
 };

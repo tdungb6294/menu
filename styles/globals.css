@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+
 body {
     margin: 0;
     padding: 0;
@@ -10,4 +11,8 @@ body {
 
 :root {
     --main-text-color: #FFF6C6;
+
+    --container-width-lg: 75%;
+    --container-width-md: 86%;
+    --container-width-sm: 90%;
 }

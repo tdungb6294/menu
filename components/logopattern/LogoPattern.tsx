@@ -1,4 +1,4 @@
-import styles from '../styles/logo.module.css'
+import styles from './logo.module.css'
 
 function LogoPattern() {
     return (

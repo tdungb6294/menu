@@ -1,6 +1,6 @@
 import { LanguageContext, checkLanguage } from "@/pages"
 import { useContext } from "react"
-import styles from '../styles/dishes.module.css'
+import styles from './dishes/dishes.module.css'
 
 type lang = {
     lt: string,
