@@ -20,7 +20,9 @@ function PhoneMenu() {
 
     return (
         <div className={styles.menuContainer}>
+            <div className={phone ? '' : styles.highlightOn}>
             {phone ? <BiMenu className={styles.bimenu} onClick={() => {handleOnClick()}}/> : <ImCross className={styles.imcross} onClick={() => {handleOnClick()}}/>}
+            </div>
             <span className={styles.lt}>
                 LT
             </span>

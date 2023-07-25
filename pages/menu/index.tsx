@@ -3,16 +3,32 @@ import LogoPattern from "@/components/logopattern/LogoPattern";
 import NavBar from "@/components/navbar/NavBar";
 import PhoneMenu from "@/components/phone/PhoneMenu";
 import PhoneNavBar from "@/components/phonenavbar/PhoneNavBar";
-import VietnameseCuisine from "@/components/VietnameseCuisine";
 import styles from '../../components/dishes/dishes.module.css'
-import { LanguageContext } from "..";
-import { useContext } from "react";
+import menuStyles from './menu.module.css'
+import { LanguageContext, checkLanguage } from "..";
+import { createContext, useContext, useState } from "react";
+import DishCard from "@/components/dishCard/DishCard";
+import ScrollToTop from "@/components/scrollToTop/ScrollToTop";
+import FilterBar from "@/components/filterBar/FilterBar";
+
+type filter = {
+    filter: string[]
+    setFilter: React.Dispatch<React.SetStateAction<string[]>>
+}
+  
+const defaultFilters = {
+    filter: [],
+    setFilter: () => {}
+}
+
+export const FilterContext = createContext<filter>(defaultFilters)
 
 export default function Page() {
+    const [filter, setFilter] = useState<string[]>(['Soup', 'Chicken', 'Beef', 'Other'])
     const {language} = useContext(LanguageContext)
     return (
-        <>
-        <div className={styles.background}></div>
+        <FilterContext.Provider value={{filter, setFilter}}>
+            <div className={menuStyles.background}></div>
             <PhoneNavBar/>
             <Header/>
             <PhoneMenu/>
@@ -21,7 +37,16 @@ export default function Page() {
                 <img className={styles.logo} src='/logo.png' alt='logo'/>
             </div>
             <LogoPattern/>
-            <VietnameseCuisine/>
-        </>
+            <div className={menuStyles.menu}>
+                {checkLanguage(language) ? 'MENIU' : 'MENU'}
+            </div>
+            <div className={menuStyles.menuContainer}>
+                {/*
+                    <FilterBar/>*/
+                    <DishCard/>
+                }
+            </div>
+            <ScrollToTop/>
+        </FilterContext.Provider>
       )
 }

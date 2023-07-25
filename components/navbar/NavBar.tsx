@@ -18,7 +18,7 @@ const data = [
     {
         lt: 'MENIU',
         en: 'MENU',
-        link: '/'
+        link: '/menu'
     },
     {
         lt: 'APIE MUS',

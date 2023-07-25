@@ -1,13 +1,14 @@
-import { createContext, useState } from "react"
+import { createContext, useContext, useState } from "react"
 import styles from '../components/dishes/dishes.module.css'
+import mainStyles from './main.module.css'
 import Header from "@/components/header/Header"
 import NavBar from "@/components/navbar/NavBar"
 import LogoPattern from "@/components/logopattern/LogoPattern"
-import VietnameseCuisine from "@/components/VietnameseCuisine"
 import PhoneMenu from "@/components/phone/PhoneMenu"
 import MenuButton from "@/components/menu/MenuButton"
 import PhoneNavBar from "@/components/phonenavbar/PhoneNavBar"
 import PopularDishes from "@/components/dishes/PopularDishes"
+import ScrollToTop from "@/components/scrollToTop/ScrollToTop"
 
 type language = {
   language: string
@@ -50,6 +51,7 @@ export const PhoneContext = createContext<phone>(defaultPhone)
 
 export default function Page() {
   const [ref, setRef] = useState({});
+  const {language} = useContext(LanguageContext)
 
   return (
     <RefContext.Provider value={{ref, setRef}}>
@@ -62,9 +64,12 @@ export default function Page() {
           <img className={styles.logo} src='/logo.png' alt='logo'/>
         </div>
         <LogoPattern/>
-        <VietnameseCuisine/>
+        <div className={mainStyles.title}>
+            {checkLanguage(language) ? 'VIETNAMIETIŠKA VIRTUVĖ' : 'VIETNAMESE CUISINE'}
+          </div>
         <MenuButton/>
         <PopularDishes/>
+        <ScrollToTop/>
     </RefContext.Provider>
   )
 }

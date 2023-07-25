@@ -1,0 +1,32 @@
+
+@media only screen and (max-width: 1024px) {
+    .arrow {
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    @keyframes MoveUpDown {
+        0%, 100% {
+            transform: translateY(2px);
+        }
+        50% {
+            transform: translateY(-2px);
+        }
+    }
+    
+    .scrollContainer {
+        text-align: center;
+        width: 48px;
+        height: 48px;
+        background-color: rgba(0, 255, 149, 0.5);
+        border-radius: 50%;
+        position: fixed;
+        z-index: 10000;
+        bottom: 12px;
+        right: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: MoveUpDown 2s ease infinite;
+    }
+}

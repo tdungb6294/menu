@@ -27,9 +27,9 @@ function Header() {
       <div className={styles.info}>
         
         <BiMap className={styles.bimap} size={16}/>
-          <span className={styles.text}>
-            {checkLanguage(language) ? address.lt : address.en} 
-          </span>
+        <span className={styles.text}>
+          {checkLanguage(language) ? address.lt : address.en} 
+        </span>
         
         <div className={styles.timeContainer}>
           <BiTime className={styles.bitime} size={16}/>

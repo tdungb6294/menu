@@ -1,5 +1,5 @@
 .dish {
-    width: 80%;
+    width: 60%;
     height: auto;
 }
 
@@ -12,6 +12,9 @@
 }
 
 .dishes {
+    height: 64px;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 10%;
     font-weight: bold;
     font-size: 32px;
@@ -27,8 +30,8 @@
 
 .dishCard {
     width: 480px;
-    height: 640px;
-    margin: 40px auto 20px;
+    height: auto;
+    margin: 20px 20px 20px 20px;
     background-color: #1c1c1c;
     border-radius: 20px;
     text-align: center;
@@ -40,6 +43,7 @@
     font-weight: bold;
     font-size: 32px;
     color: #FFF6C6;
+    height: 80px;
 }
 
 .popularPage {
@@ -47,7 +51,7 @@
     display: block;
     top: 0;
     margin-top: 100vh;
-    height: 6000px;
+    height: auto;
     width: 100%;
     gap: 120px;
     justify-content: center;
@@ -87,17 +91,6 @@
     height: 160px;
 }
 
-.mainTextContainer {
-    margin-top: 24px;
-    text-align: center;
-}
-
-.mainText {
-    color: #FFF6C6;
-    font-size: 64px;
-    font-weight: bold;
-}
-
 @media only screen and (max-width: 1240px) {
     .dishContainer {
         display: block;
@@ -106,30 +99,9 @@
     .popularTitle {
         font-size: 48px;
     }
-    
-    .mainText {
-        margin-top: 40px;
-        font-size: 48px;
-    }
 
     .logoContainer {
         margin-top: 80px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .logoContainer {
-        top: 0;
-        display: block;
-        align-items: center;
-        width: 100%;
-        transform: scale(0.8);
-    }
-
-    .mainText {
-        font-size: 32px;
-        margin-left: 10%;
-        margin-right: 10%;
     }
 
     .popularTitle {
@@ -142,15 +114,23 @@
     }
 
     .dishCard {
-        width: 90%;
+        margin: 10%;
+        width: auto;
         height: auto;
     }
 
     .dishes {
         padding-top: 20px;
     }
+}
 
-    .viewMenu {
-        height: 80px;
+@media only screen and (max-width: 600px) {
+
+    .popularTitle {
+        font-size: 32px;
+    }
+
+    .dishes {
+        padding-top: 20px;
     }
 }

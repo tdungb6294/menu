@@ -3,16 +3,16 @@ import LogoPattern from "@/components/logopattern/LogoPattern";
 import NavBar from "@/components/navbar/NavBar";
 import PhoneMenu from "@/components/phone/PhoneMenu";
 import PhoneNavBar from "@/components/phonenavbar/PhoneNavBar";
-import VietnameseCuisine from "@/components/VietnameseCuisine";
 import styles from '../../components/dishes/dishes.module.css'
+import aboutStyles from './about.module.css'
 import { useContext } from "react";
-import { LanguageContext } from "..";
+import { LanguageContext, checkLanguage } from "..";
 
 export default function Page() {
     const {language} = useContext(LanguageContext)
     return (
         <>
-        <div className={styles.background}></div>
+        <div className={aboutStyles.background}></div>
             <PhoneNavBar/>
             <Header/>
             <PhoneMenu/>
@@ -21,7 +21,9 @@ export default function Page() {
                 <img className={styles.logo} src='/logo.png' alt='logo'/>
             </div>
             <LogoPattern/>
-            <VietnameseCuisine/>
+            <div className={aboutStyles.title}>
+                {checkLanguage(language) ? 'APIE MUS' : 'ABOUT US'}
+            </div>
         </>
       )
 }

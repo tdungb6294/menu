@@ -1,0 +1,14 @@
+
+.title {
+    margin-top: 20px;
+    text-align: center;
+    color: #FFF6C6;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+    .title {
+        margin-top: 0;
+    }
+}

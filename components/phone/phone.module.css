@@ -12,13 +12,22 @@
         width: 100%;
         z-index: 9999;
     }
+    
+    .highlightOn {
+        background-color: #1c1c1c;
+        top: 0;
+        height: 64px;
+        width: 64px;
+        right: 0;
+        position: fixed;
+    }
 
     .phoneContainer {
         position: absolute;
         right: 0;
         top: 0;
         padding-top: 20px;
-        padding-right: 24px;
+        padding-right: 28px;
         margin-right: 44px;
     }
 

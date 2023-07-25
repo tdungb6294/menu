@@ -1,0 +1,89 @@
+.contactsContainer {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.text {
+    font-size: 20px;
+    padding-left: 4px;
+    color: white;
+}
+
+.workHoursText {
+    padding-top: 2px;
+    background-color: rgba(0,0,0,0.5);
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    font-size: 20px;
+    color: white;
+    grid-column: 1;
+}
+
+.workHoursTime {
+    padding-top: 2px;
+    background-color: rgba(0,0,0,0.5);
+    border-bottom: 1px solid white;
+    font-size: 20px;
+    color: white;
+    grid-column: 2;
+}
+
+.bi {
+    vertical-align: bottom;
+    padding-bottom: 2px;
+    color: white;
+}
+
+.workHoursContainer {
+    border-top: 1px solid white;
+    display: grid;
+    margin: 0 auto;
+    width: 240px;
+    grid-template-rows: repeat(7, 30px);
+}
+
+.infoContainer {    
+    padding-top: 6px;
+    padding-bottom: 4px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.title {
+    margin-top: 20px;
+    text-align: center;
+    color: #FFF6C6;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.map {
+    margin: 40px;
+    width: 80%;
+    height: 300px;
+}
+
+.background {
+    background-color: #1c1c1c;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: fixed;
+    background-attachment: fixed;
+    background-position: center 50%;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .title {
+        margin-top: 0;
+    }
+    .map {
+        margin: 10%;
+        width: 80%;
+        height: 300px;
+    }    
+}
